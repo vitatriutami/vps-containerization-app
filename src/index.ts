@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 mongoose
   .connect(process.env.MONGO_URI as string)
-  .then(() => console.log("connected to mongodb"))
+  .then(() => console.log(`the db is connected with ${mongoose.connection.host}`))
   .catch((err) => console.log(err));
 
 app.use(express.json());
